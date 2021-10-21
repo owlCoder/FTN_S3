@@ -44,7 +44,7 @@ int main(void)
 
     // OSLOBADJANJE MEMORIJE U DINAMICKOJ ZONI
     for(unsigned i = 0; i < n; i++)
-        delete matrica[i];
+        delete[] matrica[i];
     delete[] matrica;
 
     return 0;
