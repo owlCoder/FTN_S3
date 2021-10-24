@@ -17,13 +17,13 @@ function printEntity(entity)
     @printf("\t%7.2f\n" , entity.fitness)
 end
 
-function calculateFitness!(entity, fitValue)
+function calculateFitness!(entity)
     entity.fitness = 0
     entity.fitness = 4 * (entity.genes[1]^2) - (6 * entity.genes[1]) - (3 * (entity.genes[2]^3)) + (0.5 * entity.genes[2])
     entity.fitness += (3 * (entity.genes[3])) + (8 * (entity.genes[4])) - (6.1 * (entity.genes[5])) + (2 * entity.genes[6])
     entity.fitness -= 10 
     # println("FITNES $(entity.fitness)")
-    entity.fitness = abs(entity.fitness - fitValue)
+    entity.fitness = abs(entity.fitness)
 end
 
 function crossover!(entity1, entity2, crossoverPoint)
@@ -36,7 +36,11 @@ end
 
 function mutate!(entity, mutationPercentage)
     if(rand(Float64) < mutationPercentage)
-        mutationPoint = rand(1:genesLength)
-        entity.genes[mutationPoint] = 1 - entity.genes[mutationPoint]
+        mutationPoint = rand(1:length(entity.genes))
+        if(entity.genes[mutationPoint] > 0)
+            entity.genes[mutationPoint] = entity.genes[mutationPoint] - 0.1
+        else
+            entity.genes[mutationPoint] = entity.genes[mutationPoint] + 0.1
+        end
     end
 end

@@ -20,9 +20,9 @@ function selectPopulation(data, n)
     return copy(data[1:n])
 end
 
-function calculatePopulationFitness!(data, fitValue)
+function calculatePopulationFitness!(data)
     for i in 1:length(data)
-        calculateFitness!(data[i], fitValue)
+        calculateFitness!(data[i])
     end
     sort!(data, by = d -> d.fitness, rev = false)
 end
@@ -31,14 +31,12 @@ function crossoverPopulation!(data, crossoverPoint)
     newData = []
     # sort postoji u kalkulaciji fitnessa populacije
     # sort!(data, by = d -> d.fitness, rev = false)
-    for i in 1:length(data)
-        for j in 1:length(data)
-            ent1 = deepcopy(data[i])
-            ent2 = deepcopy(data[j])
-            crossover!(ent1, ent2, crossoverPoint)
-            push!(newData, ent1)
-            push!(newData, ent2)
-        end
+    for i in 1:2:length(data)
+        ent1 = deepcopy(data[i])
+        ent2 = deepcopy(data[i + 1])
+        crossover!(ent1, ent2, crossoverPoint)
+        push!(newData, ent1)
+        push!(newData, ent2)
     end
     return newData
 end

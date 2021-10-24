@@ -8,18 +8,17 @@
 include("geneticAlgorithm.jl")
 
 genesLength = 6
-populationSize = 5
-fitValue = 0.0                 # ako brojevi daju kao resenje 0, to je resenje jednacine
-crossoverPoint = rand(2:4)     # 1 ili 6 --> inf. loop
-mutationPercentage = 20        # uslov 3 ?
-selectionSize = 3              # bira se CHR
-repeatSize = 5                 # max RS
+populationSize = 50
+crossoverPoint = rand(2:4) 
+mutationPercentage = 0.2    
+elitePercentage = 0.2    
+repeatSize = 3             
 
 population = generatePopulation(populationSize, genesLength)
-calculatePopulationFitness!(population, fitValue)
+calculatePopulationFitness!(population)
 printPopulation(population)
 
-popGen, repeatNum, population = geneticAlgorithm!(population, fitValue, selectionSize, crossoverPoint, mutationPercentage, repeatSize)
+popGen, repeatNum, population = geneticAlgorithm!(population, elitePercentage, crossoverPoint, mutationPercentage, repeatSize)
 printPopulation(population)
 
 println("\n\t\tUKUPAN BROJ GENERACIJA: $popGen")
