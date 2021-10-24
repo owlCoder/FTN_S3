@@ -8,12 +8,12 @@
 include("geneticAlgorithm.jl")
 
 genesLength = 6
-populationSize = 500
+populationSize = 5
 fitValue = 0.0                 # ako brojevi daju kao resenje 0, to je resenje jednacine
 crossoverPoint = rand(2:4)     # 1 ili 6 --> inf. loop
 mutationPercentage = 20        # uslov 3 ?
 selectionSize = 3              # bira se CHR
-repeatSize = 10                # max RS
+repeatSize = 5                 # max RS
 
 population = generatePopulation(populationSize, genesLength)
 calculatePopulationFitness!(population, fitValue)
