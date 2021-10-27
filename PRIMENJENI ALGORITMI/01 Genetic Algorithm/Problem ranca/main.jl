@@ -38,10 +38,5 @@ else
         end
     end
 
-    open("resenje.txt", "w") do file
-        write(file, out)
-    end
-    write(stdin.buffer, 0x0C) # očisti terminal
-
-    print("Rešenje se nalazi u datoteci \"resenje.txt!\"")
+    println(out);
 end
