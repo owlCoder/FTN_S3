@@ -1,3 +1,23 @@
+#=
+Zadatak: Problem ranca
+– Neka je dat ranac koji može da ponese kamenje u ukupnoj težini C. Neka je dato
+N kamenja, od čega svaki kamen ima svoju težinu ti i svoju vrednost vi. Koje
+kamenje treba zabrati, tako da njihova ukupna težina ne predje težinu C, a da im
+ukupna vrednost bude što veća?
+– Pri kreiranu algoritma, koristiti ukrtanje sa sve tačke ukrštanja. Ukrštati najbolje
+jedinke po parovima
+■ Zadatak za samostalan rad:
+– Analizirati ponašanje sistema za vrednosti vrednost mutacije u rasponu 10-25%
+– Analizirati ponašanje sistema za različite vrednosti tačaka ukršanja u rasponu
+1-20
+■ Analiza zadatka:
+– Svaki kamen može da bude deo rešenja (vrednost 1) ili ne bude (vrednost 0), pa
+dobijamo hromozom dužine N
+– Za fitness vrednost možemo uzeti, razliku ukupne vrednosti svih kamenja i
+vrednosti izabranog kamenja, tj. vrednost kamenja koje nismo izabrali i tu
+vrednost treba minimizirati
+=#
+
 include("geneticAlgorithm.jl")
 
 numberOfRocks = 20
