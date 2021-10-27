@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity minimizacija_tb is
+entity segmentA_tb is
 end entity;
 
-architecture Test of minimizacija_tb is
+architecture Test of segmentA_tb is
     signal sB0 : std_logic;
     signal sB1 : std_logic;
     signal sB2 : std_logic;
@@ -12,7 +12,7 @@ architecture Test of minimizacija_tb is
     signal sY  : std_logic;
 
     -- instanciranje komponente koju zelimo da testiramo
-    component minimizacija is
+    component segmentA is
         port(
             iB0 : in std_logic;
             iB1 : in std_logic;
@@ -24,7 +24,7 @@ architecture Test of minimizacija_tb is
 
     begin
         -- mapiranje prolaza i internih signala
-        uut : minimizacija port map(
+        uut : segmentA port map(
             iB0 => sB0,
             iB1 => sB1,
             iB2 => sB2,
@@ -49,13 +49,13 @@ architecture Test of minimizacija_tb is
                 sB3 <= '0';
                 sB2 <= '0';
                 sB1 <= '1';
-                sB0 <= '0';
+                sB0 <= '1';
                 wait for 10 ns;
 
                 sB3 <= '0';
                 sB2 <= '0';
                 sB1 <= '1';
-                sB0 <= '1';
+                sB0 <= '0';
                 wait for 10 ns;
                 
                 sB3 <= '0';
@@ -73,61 +73,61 @@ architecture Test of minimizacija_tb is
                 sB3 <= '0';
                 sB2 <= '1';
                 sB1 <= '1';
-                sB0 <= '0';
+                sB0 <= '1';
                 wait for 10 ns;
 
                 sB3 <= '0';
                 sB2 <= '1';
                 sB1 <= '1';
-                sB0 <= '1';
-                wait for 10 ns;
-
-                sB3 <= '1';
-                sB2 <= '0';
-                sB1 <= '0';
                 sB0 <= '0';
                 wait for 10 ns;
 
-                sB3 <= '1';
-                sB2 <= '0';
-                sB1 <= '0';
-                sB0 <= '1';
-                wait for 10 ns;
-
-                sB3 <= '1';
-                sB2 <= '0';
-                sB1 <= '1';
-                sB0 <= '0';
-                wait for 10 ns;
-
-                sB3 <= '1';
-                sB2 <= '0';
-                sB1 <= '1';
-                sB0 <= '1';
-                wait for 10 ns;
-                
                 sB3 <= '1';
                 sB2 <= '1';
                 sB1 <= '0';
+                sB0 <= '0';
+                wait for 10 ns;
+
+                sB3 <= '1';
+                sB2 <= '1';
+                sB1 <= '0';
+                sB0 <= '1';
+                wait for 10 ns;
+
+                sB3 <= '1';
+                sB2 <= '1';
+                sB1 <= '1';
+                sB0 <= '1';
+                wait for 10 ns;
+
+                sB3 <= '1';
+                sB2 <= '1';
+                sB1 <= '1';
                 sB0 <= '0';
                 wait for 10 ns;
                 
                 sB3 <= '1';
-                sB2 <= '1';
+                sB2 <= '0';
+                sB1 <= '0';
+                sB0 <= '0';
+                wait for 10 ns;
+                
+                sB3 <= '1';
+                sB2 <= '0';
                 sB1 <= '0';
                 sB0 <= '1';
                 wait for 10 ns;
 
                 sB3 <= '1';
-                sB2 <= '1';
+                sB2 <= '0';
                 sB1 <= '1';
-                sB0 <= '0';
+                sB0 <= '1';
                 wait for 10 ns;
 
                 sB3 <= '1';
-                sB2 <= '1';
+                sB2 <= '0';
                 sB1 <= '1';
-                sB0 <= '1';
+                sB0 <= '0';
                 wait;
             end process;
 end architecture;

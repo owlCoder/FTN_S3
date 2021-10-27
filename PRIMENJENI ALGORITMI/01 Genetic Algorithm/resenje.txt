@@ -1,0 +1,9 @@
+
+Ukupan broj kamenja je 20
+Tezine kamenja su [10, 45, 89, 88, 26, 23, 5, 59, 43, 80, 63, 24, 87, 84, 6, 33, 75, 59, 66, 52]
+Maksimalna tezina kamenja je 30
+Rezultati: Tezina izabranog kamenja je: 23
+Vrednost izabranog kamenja je: 266
+Ukupan broj generacija je 3
+Idealna jedinka Entity([0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], 751)
+Izabrana su kamenja sa rednim brojevima: 3 8 19 20 
