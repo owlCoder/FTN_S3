@@ -34,6 +34,26 @@ function findBestElitePercentage(data, eliteRange, crossoverPoint, mutationPerce
     return minIndex, optimalValue, resultsFit, resultsGen
 end
 
- function findBestCrossoverAndMutation(data, eliteRange, crossoverRange, mutationRange, num)
-     resultsFit = ones(length(crossoverRange), length(mutationRange))
- end
+ function findBestCrossoverAndMutation(data, elitePercentage, crossoverRange, mutationRange, num)
+    resultsFit = ones(length(crossoverRange), length(mutationRange))
+    resultsGen = ones(length(crossoverRange), length(mutationRange))
+ 
+    for i in 1:length(crossoverRange)
+        crossoverPoint = crossoverRange[i]
+
+        for j in 1:length(mutationRange)
+            mutationPercentage = mutationRange[j]
+            dataCopy = deepcopy(data)
+            averageGen, averageFit = calculateAverage(dataCopy, elitePercentage, crossoverPoint, mutationPercentage, num)
+
+            resultsFit[i, j] = averageFit
+            resultsGen[i, j] = averageGen
+        end
+    end
+    coordinates = argmin(resultsFit)
+    minCrossoverIndex = coordinates[1]
+    minMutationIndex = coordinates[2]
+    optimalValue = resultsFit[minCrossoverIndex, minMutationIndex]
+
+    return minCrossoverIndex, minMutationIndex, optimalValue, resultsFit, resultsGen
+end
