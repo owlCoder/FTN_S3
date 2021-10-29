@@ -1,6 +1,6 @@
 Analysis & Synthesis report for SegmentA
-Mon Oct 25 19:16:18 2021
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri Oct 29 11:44:23 2021
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
 ---------------------
@@ -23,7 +23,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2019  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -43,8 +43,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 25 19:16:18 2021       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Fri Oct 29 11:44:23 2021       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SegmentA                                    ;
 ; Top-level Entity Name              ; segmentA                                    ;
 ; Family                             ; MAX 10                                      ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                           ; 10M16SAU169C8G     ;                    ;
+; Device                                                           ; 10M16SAU169I7G     ;                    ;
 ; Top-level entity name                                            ; SegmentA           ; SegmentA           ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -164,13 +164,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; SegmentA.vhd                     ; yes             ; User VHDL File  ; D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; SegmentA.vhd                     ; yes             ; User VHDL File  ; /home/danijel/Desktop/SegmentA/SegmentA.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -260,17 +260,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Oct 25 19:16:01 2021
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Fri Oct 29 11:44:12 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SegmentA -c SegmentA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file segmenta.vhd
-    Info (12022): Found design unit 1: segmentA-Behavioral File: D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA.vhd Line: 14
-    Info (12023): Found entity 1: segmentA File: D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file segmenta_tb.vhd
-    Info (12022): Found design unit 1: segmentA_tb-Test File: D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA_tb.vhd Line: 7
-    Info (12023): Found entity 1: segmentA_tb File: D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA_tb.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file SegmentA.vhd
+    Info (12022): Found design unit 1: segmentA-Behavioral File: /home/danijel/Desktop/SegmentA/SegmentA.vhd Line: 14
+    Info (12023): Found entity 1: segmentA File: /home/danijel/Desktop/SegmentA/SegmentA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file simulation/modelsim/SegmentA_tb.vhd
+    Info (12022): Found design unit 1: segmentA_tb-Test File: /home/danijel/Desktop/SegmentA/simulation/modelsim/SegmentA_tb.vhd Line: 7
+    Info (12023): Found entity 1: segmentA_tb File: /home/danijel/Desktop/SegmentA/simulation/modelsim/SegmentA_tb.vhd Line: 4
 Info (12127): Elaborating entity "SegmentA" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -280,9 +280,9 @@ Info (21057): Implemented 6 device resources after synthesis - the final resourc
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 1 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4771 megabytes
-    Info: Processing ended: Mon Oct 25 19:16:18 2021
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Peak virtual memory: 926 megabytes
+    Info: Processing ended: Fri Oct 29 11:44:23 2021
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:20
 
 

@@ -1,9 +1,9 @@
-Power Analyzer Status : Successful - Mon Oct 25 19:16:35 2021
-Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Power Analyzer Status : Successful - Fri Oct 29 11:44:32 2021
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : SegmentA
 Top-level Entity Name : segmentA
 Family : MAX 10
-Device : 10M16SAU169C8G
+Device : 10M16SAU169I7G
 Power Models : Final
 Total Thermal Power Dissipation : 220.43 mW
 Core Dynamic Thermal Power Dissipation : 0.00 mW

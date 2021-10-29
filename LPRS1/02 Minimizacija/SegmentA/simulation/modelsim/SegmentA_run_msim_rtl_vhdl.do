@@ -5,11 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA.vhd}
+vcom -93 -work work {/home/danijel/Desktop/SegmentA/SegmentA.vhd}
 
-vcom -93 -work work {D:/FTN_S3/LPRS1/02 Minimizacija/SegmentA/SegmentA_tb.vhd}
+vcom -93 -work work {/home/danijel/Desktop/SegmentA/simulation/modelsim/SegmentA_tb.vhd}
 
-vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  segmentA
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  SegmentA_tb
 
 add wave *
 view structure

@@ -1,6 +1,6 @@
 Flow report for SegmentA
-Mon Oct 25 19:16:42 2021
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri Oct 29 11:44:35 2021
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2019  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -41,12 +41,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Oct 25 19:16:42 2021       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Flow Status                        ; Successful - Fri Oct 29 11:44:35 2021       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SegmentA                                    ;
 ; Top-level Entity Name              ; segmentA                                    ;
 ; Family                             ; MAX 10                                      ;
-; Device                             ; 10M16SAU169C8G                              ;
+; Device                             ; 10M16SAU169I7G                              ;
 ; Timing Models                      ; Final                                       ;
 ; Total logic elements               ; 2 / 15,840 ( < 1 % )                        ;
 ;     Total combinational functions  ; 2 / 15,840 ( < 1 % )                        ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/25/2021 19:16:01 ;
+; Start date & time ; 10/29/2021 11:44:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SegmentA            ;
 +-------------------+---------------------+
@@ -78,23 +78,23 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 106611686640497.163518216105976        ; --            ; --          ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; segmentA                          ;
+; COMPILER_SIGNATURE_ID                ; 269178634233261.163550065203490        ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SegmentA_tb                       ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; segmentA                               ; --            ; --          ; eda_simulation                    ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; SegmentA_tb                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; SegmentA_tb.vhd                        ; --            ; --          ; segmentA                          ;
-; EDA_TEST_BENCH_MODULE_NAME           ; segmentA                               ; --            ; --          ; segmentA                          ;
-; EDA_TEST_BENCH_NAME                  ; segmentA                               ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/SegmentA_tb.vhd    ; --            ; --          ; SegmentA_tb                       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; SegmentA_tb                            ; --            ; --          ; SegmentA_tb                       ;
+; EDA_TEST_BENCH_NAME                  ; SegmentA_tb                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; FLOW_ENABLE_POWER_ANALYZER           ; On                                     ; Off           ; --          ; --                                ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
+; MAX_CORE_JUNCTION_TEMP               ; 100                                    ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; -40                                    ; --            ; --          ; --                                ;
 ; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
 ; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
@@ -110,28 +110,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 4771 MB             ; 00:00:40                           ;
-; Fitter               ; 00:00:08     ; 1.0                     ; 5299 MB             ; 00:00:09                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4680 MB             ; 00:00:03                           ;
-; Power Analyzer       ; 00:00:02     ; 1.0                     ; 4798 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4765 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4634 MB             ; 00:00:01                           ;
-; Total                ; 00:00:33     ; --                      ; --                  ; 00:00:59                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 919 MB              ; 00:00:19                           ;
+; Fitter               ; 00:00:04     ; 1.0                     ; 1289 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 809 MB              ; 00:00:01                           ;
+; Power Analyzer       ; 00:00:01     ; 1.0                     ; 1185 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 805 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1025 MB             ; 00:00:00                           ;
+; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-1BMIQDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-1BMIQDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-1BMIQDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; Power Analyzer       ; DESKTOP-1BMIQDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-1BMIQDA  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-1BMIQDA  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++----------------------+------------------+--------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name      ; OS Version ; Processor type ;
++----------------------+------------------+--------------+------------+----------------+
+; Analysis & Synthesis ; flayi            ; Ubuntu 21.10 ; 21         ; x86_64         ;
+; Fitter               ; flayi            ; Ubuntu 21.10 ; 21         ; x86_64         ;
+; Assembler            ; flayi            ; Ubuntu 21.10 ; 21         ; x86_64         ;
+; Power Analyzer       ; flayi            ; Ubuntu 21.10 ; 21         ; x86_64         ;
+; Timing Analyzer      ; flayi            ; Ubuntu 21.10 ; 21         ; x86_64         ;
+; EDA Netlist Writer   ; flayi            ; Ubuntu 21.10 ; 21         ; x86_64         ;
++----------------------+------------------+--------------+------------+----------------+
 
 
 ------------

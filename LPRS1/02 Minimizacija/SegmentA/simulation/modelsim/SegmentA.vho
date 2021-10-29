@@ -1,4 +1,4 @@
--- Copyright (C) 2020  Intel Corporation. All rights reserved.
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
 -- Your use of Intel Corporation's design tools, logic functions 
 -- and other software and tools, and any partner logic 
 -- functions, and any output files from any of the foregoing 
@@ -15,12 +15,12 @@
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+-- VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
--- DATE "10/25/2021 19:16:42"
+-- DATE "10/29/2021 11:44:35"
 
 -- 
--- Device: Altera 10M16SAU169C8G Package UFBGA169
+-- Device: Altera 10M16SAU169I7G Package UFBGA169
 -- 
 
 -- 
@@ -92,7 +92,7 @@ ENTITY 	segmentA IS
 	iB1 : IN std_logic;
 	iB2 : IN std_logic;
 	iB3 : IN std_logic;
-	oY : BUFFER std_logic
+	oY : OUT std_logic
 	);
 END segmentA;
 
@@ -100,8 +100,8 @@ END segmentA;
 -- oY	=>  Location: PIN_K2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- iB0	=>  Location: PIN_L2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- iB3	=>  Location: PIN_M4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- iB1	=>  Location: PIN_K1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- iB2	=>  Location: PIN_L3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- iB2	=>  Location: PIN_K1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- iB1	=>  Location: PIN_L3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF segmentA IS
@@ -124,8 +124,8 @@ SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
 SIGNAL \oY~output_o\ : std_logic;
-SIGNAL \iB2~input_o\ : std_logic;
 SIGNAL \iB1~input_o\ : std_logic;
+SIGNAL \iB2~input_o\ : std_logic;
 SIGNAL \iB0~input_o\ : std_logic;
 SIGNAL \iB3~input_o\ : std_logic;
 SIGNAL \oY~0_combout\ : std_logic;
@@ -183,18 +183,6 @@ PORT MAP (
 	o => \oY~output_o\);
 
 -- Location: IOIBUF_X0_Y3_N22
-\iB2~input\ : fiftyfivenm_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	listen_to_nsleep_signal => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_iB2,
-	o => \iB2~input_o\);
-
--- Location: IOIBUF_X0_Y3_N1
 \iB1~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -205,6 +193,18 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_iB1,
 	o => \iB1~input_o\);
+
+-- Location: IOIBUF_X0_Y3_N1
+\iB2~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_iB2,
+	o => \iB2~input_o\);
 
 -- Location: IOIBUF_X0_Y7_N8
 \iB0~input\ : fiftyfivenm_io_ibuf
@@ -233,16 +233,16 @@ PORT MAP (
 -- Location: LCCOMB_X3_Y3_N24
 \oY~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \oY~0_combout\ = (\iB2~input_o\ & (!\iB1~input_o\ & (\iB0~input_o\ $ (!\iB3~input_o\)))) # (!\iB2~input_o\ & (\iB1~input_o\ & (\iB0~input_o\)))
+-- \oY~0_combout\ = (\iB2~input_o\ & (!\iB1~input_o\ & (\iB0~input_o\ $ (!\iB3~input_o\)))) # (!\iB2~input_o\ & (\iB0~input_o\ & (\iB1~input_o\ $ (!\iB3~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110000001000010",
+	lut_mask => "0110000000010100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \iB2~input_o\,
-	datab => \iB1~input_o\,
+	dataa => \iB1~input_o\,
+	datab => \iB2~input_o\,
 	datac => \iB0~input_o\,
 	datad => \iB3~input_o\,
 	combout => \oY~0_combout\);
