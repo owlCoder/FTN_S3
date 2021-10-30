@@ -16,12 +16,12 @@ architecture Behavioral of segmentA is
     signal sS1 : std_logic;
     signal sS2 : std_logic;
     signal sS3 : std_logic;
-	 signal sS4 : std_logic;
-	 signal ss5 : std_logic;
-	 signal ss6 : std_logic;
+	signal sS4 : std_logic;
+	signal ss5 : std_logic;
+	signal ss6 : std_logic;
 
     begin
-        sS0 <= iB1 and not(iB0);
+          sS0 <= iB1 and not(iB0);
 		  sS1 <= not(iB3) and iB1;
 		  sS2 <= not(iB3) and iB2 and iB0;
 		  sS3 <= iB2 and iB1;
