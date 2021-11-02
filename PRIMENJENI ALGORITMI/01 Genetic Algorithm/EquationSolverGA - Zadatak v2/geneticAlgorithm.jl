@@ -1,34 +1,33 @@
 include("population.jl")
 
-function geneticAlgorithm!(data, elitePercentage, crossoverPoint, mutationPercentage, repeatSize)
-    calculatePopulationFitness!(data)
+function converge(bestFits)
+   len = length(bestFits)
+   if bestFits[len]<0.01
+      return true
+   elseif len<3
+      return false
+   elseif (bestFits[len-2]-bestFits[len])<0.001
+      return true
+   else
+      return false
+   end
+end
 
-    populationSize = length(data)
-    popGen = 0
-    bestFit = data[1].fitness
-    repeatNum = 1
-    eliteSize = Int(trunc(elitePercentage * populationSize))
-
-    # Ako nam za ukrštanje ostaje neparan broj jedinki, povećamo eliteSize za 1
-    eliteSize = eliteSize + (populationSize - eliteSize) % 2
-
-    while( (data[1].fitness > 0.0) && (repeatNum < repeatSize) )
+function geneticAlgorithm!(data, elitePercentage, crossoverPoint, mutationPercentage)
+     calculatePopulationFitness!(data)
+     populationSize = length(data)
+     eliteSize = Int(trunc(elitePercentage*populationSize))
+     # Ako nam za ukrstanje ostaje neparan broj jedinki, povecamo eliteSize za 1
+     eliteSize = eliteSize+(populationSize-eliteSize)%2
+     bestFits = [data[1].fitness]
+     while !converge(bestFits)
         elite = deepcopy(selectPopulation(data, eliteSize))
-        data = selectPopulation(data, populationSize - eliteSize)
-        data = crossoverPopulation!(data, crossoverPoint)
+	data = selectPopulation(data, populationSize-eliteSize)
+	data = crossoverPopulation(data, crossoverPoint)
         mutatePopulation!(data, mutationPercentage)
-        data = [data; elite]
+	data = [data; elite]
         calculatePopulationFitness!(data)
-        popGen = popGen + 1
-
-        @printf("   GEN: %2i\t\tBEST-FIT: %7.2f\t\tBR-PON: %2i\n",  popGen, bestFit, repeatNum)
-
-        if( abs(bestFit - data[1].fitness) < 0.01)
-            repeatNum = repeatNum + 1
-        else
-            bestFit = data[1].fitness
-            repeatNum = 1
-        end
-    end
-    return popGen, repeatNum, data
+	bestFits = [bestFits; data[1].fitness]
+     end
+     return length(bestFits), data
 end
