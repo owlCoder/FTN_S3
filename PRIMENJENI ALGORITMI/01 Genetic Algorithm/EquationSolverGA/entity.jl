@@ -1,4 +1,3 @@
-using Distributions
 using Printf
 
 mutable struct Entity
@@ -7,7 +6,7 @@ mutable struct Entity
 end
 
 function generateEntity(genesLenght)
-    return Entity(rand(Uniform(-1, 1), genesLenght), 0)
+    return Entity(rand(-1.0:0.1:1.0, genesLenght), 0)
 end
 
 function printEntity(entity)
