@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1636040829 source:/home/danijel/Desktop/Automobil/main.cpp
+	"Automobil.hpp"
+
+1636041018 /home/danijel/Desktop/Automobil/Automobil.hpp
+	"Skoljka.hpp"
+
+1636040795 /home/danijel/Desktop/Automobil/Skoljka.hpp
+	"Menjac.hpp"
+
+1636037454 /home/danijel/Desktop/Automobil/Menjac.hpp
+	<iostream>
+
