@@ -109,7 +109,7 @@ function PsoAlgorithm!(swarm, targetValue, maxIteration, maxVelocity)
     globalBestParticle = calculateGlobalBestParticle(swarm, targetValue, globalBestParticle)
 
     for i in 1:maxIteration
-        if globalBestParticle == targetValue
+        if globalBestParticle.currentValue == targetValue
                 printSwarm(swarm)
                 println("RESENJE")
                 printParticle(globalBestParticle)
