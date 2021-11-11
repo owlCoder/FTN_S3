@@ -1,12 +1,12 @@
-include("algorithm.jl")
+include("pso.jl")
 
-numberOfParticles = 10
-numberOfOperands =         # n
-minRang = -1
-maxRang = 1
-targetValue = 0            # s
-maxIteration = 200
+numberOfParticles = 100
+numberOfOperands = 10           # n
+minRang = 100
+maxRang = 200
+targetValue = 400               # s
+maxIteration = 1000
 maxVelocity = 10
 
 swarm = generateSwarm(numberOfParticles, numberOfOperands, minRang, maxRang)
-PsoAlgorithm(swarm, targetValue, maxIteration, maxVelocity)
+PSOAlgorithm!(swarm, targetValue, maxIteration, maxVelocity)
