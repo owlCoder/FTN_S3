@@ -121,7 +121,7 @@ function geneticAlgorithm!(data, elitePercentage, crossoverPoint, mutationPercen
 
     # Ako je velicina elite neparan broj dodaj 1
     eliteSize = eliteSize + (populationSize - eliteSize) % 2
-    bestFits = data[1].fitness
+    bestFits = [data[1].fitness]
 
     while !converge(bestFits)
         elite = deepcopy(selectPopulation(data, eliteSize))
