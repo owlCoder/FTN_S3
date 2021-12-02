@@ -220,5 +220,5 @@ begin
 	
 	-- KOMBINACIONI DEO POMERAČKOG REGISTRA WHEN-ELSE
 	s_n_sh_reg    <= i_sequence WHEN i_load_sequence = '1' ELSE
-					     s_sh_reg(62 downto 0) & '0';
+					     s_sh_reg(61 downto 0) & "00";
 end architecture;
