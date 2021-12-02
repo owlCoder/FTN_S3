@@ -201,7 +201,7 @@ begin
 				 
 	-- POMERAČKI REGISTAR - ASINHRONI RESET
 	-- s_sh_reg KAO SIGNAL REGISTRA
-	process(i_clk, i_rst) begin
+	process(i_clk, i_rst, s_sh_reg) begin
 		if(i_rst = '1') then
 			s_sh_base <= "00";
 		elsif(falling_edge(i_clk)) then
@@ -209,16 +209,16 @@ begin
 		end if;
 	end process;
 	
-	-- DODELA VREDNOSTI REGISTRU - WHEN-ELSE
-	process(i_clk, i_rst) begin
+	-- KOMBINACIONA MREŽA - DODELA VREDNOSTI REGISTRU - WHEN-ELSE
+	process(i_clk, i_rst, i_sequence, i_load_sequence, s_n_sh_reg) begin
 		if(i_rst = '1') then
 			s_sh_reg <= (others => '0');
-		elsif(falling_edge(i_clk)) then
+		else
 			s_sh_reg <= s_n_sh_reg;
 		end if;
 	end process;
 	
-	-- KOMBINACIONI DEO POMERAČKOG REGISTRA WHEN-ELSE
 	s_n_sh_reg    <= i_sequence WHEN i_load_sequence = '1' ELSE
 					     s_sh_reg(62 downto 0) & '0';
+
 end architecture;

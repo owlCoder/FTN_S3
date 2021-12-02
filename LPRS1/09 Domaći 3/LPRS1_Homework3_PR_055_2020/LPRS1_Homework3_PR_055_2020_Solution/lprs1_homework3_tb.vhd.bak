@@ -63,48 +63,48 @@ begin
 		
 		-- 1. На улаз i_base довести следећe секвенце:
 	   -- (а) GAGA GCAT CGTG AAGA GGCA AGAA GGCA CCAT
-		i_base <= C;
+		i_base <= G;
 		wait for i_clk_period;
 		
 		i_base <= A;
 		wait for i_clk_period;
 		
-		i_base <= T;
+		i_base <= G;
 		wait for i_clk_period;
 		
-		i_base <= C;
+		i_base <= A;
 		wait for i_clk_period;
 		
 		------------ END OF GAGA -----------------
 		
-		i_base <= A;
-		wait for i_clk_period;
-		
-		i_base <= T;
+		i_base <= G;
 		wait for i_clk_period;
 		
 		i_base <= C;
+		wait for i_clk_period;
+		
+		i_base <= A;
 		wait for i_clk_period;
 		
 		------------ ISPIS NA MUX ----------------
 		i_cnt_subseq_sel <= "01"; -- PODSEKVENCA POD B, VREDNOST 1. BROJAČA
 		------------------------------------------
 		
-		i_base <= A;
+		i_base <= T;
 		wait for i_clk_period;
 		
 		------------ END OF GCAT -----------------
 		
-		i_base <= T;
-		wait for i_clk_period;
-		
 		i_base <= C;
 		wait for i_clk_period;
 		
-		i_base <= A;
+		i_base <= G;
 		wait for i_clk_period;
 		
 		i_base <= T;
+		wait for i_clk_period;
+		
+		i_base <= G;
 		wait for i_clk_period;
 		
 		------------ END OF CGTG -----------------
