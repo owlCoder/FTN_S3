@@ -53,11 +53,7 @@ begin
 		if(i_rst = '1') then
 				s_state <= IDLE;
 		elsif(falling_edge(i_clk)) then
-		--	if(i_rst = '1') then
-	--			s_state <= IDLE;
-		--	else
 				s_state <= s_next_state;
-		--	end if;
 		end if;
 	end process;
 	
