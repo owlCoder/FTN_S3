@@ -30,7 +30,7 @@ begin
 	-- REG0, SINHRONI RESET
 	process(iCLK) begin
 		if(iCLK'event AND iCLK = '1') then
-			if(inRESET = '1') then
+			if(inRESET = '0') then
 				sR0 <= "0000";
 			else
 				if(sWE0 = '1') then
@@ -43,7 +43,7 @@ begin
 	-- REG1, SINHRONI RESET
 	process(iCLK) begin
 		if(iCLK'event AND iCLK = '1') then
-			if(inRESET = '1') then
+			if(inRESET = '0') then
 				sR1 <= "0000";
 			else
 				if(sWE1 = '1') then
@@ -56,7 +56,7 @@ begin
 	-- REG2, SINHRONI RESET
 	process(iCLK) begin
 		if(iCLK'event AND iCLK = '1') then
-			if(inRESET = '1') then
+			if(inRESET = '0') then
 				sR2 <= "0000";
 			else
 				if(sWE2 = '1') then
@@ -69,7 +69,7 @@ begin
 	-- REG0, SINHRONI RESET
 	process(iCLK) begin
 		if(iCLK'event AND iCLK = '1') then
-			if(inRESET = '1') then
+			if(inRESET = '0') then
 				sR3 <= "0000";
 			else
 				if(sWE3 = '1') then
@@ -81,15 +81,15 @@ begin
 	
 	-- MUX1
 	sA <= sR0 WHEN iSEL(3 downto 2) = "00" ELSE
-		  SR1 WHEN iSEL(3 downto 2) = "01" ELSE
-		  sR2 WHEN iSEL(3 downto 2) = "10" ELSE
-		  sR3;
+		   SR1 WHEN iSEL(3 downto 2) = "01" ELSE
+		   sR2 WHEN iSEL(3 downto 2) = "10" ELSE
+		   sR3;
 		  
 	-- MUX2
 	sB <= sR0 WHEN iSEL(5 downto 4) = "00" ELSE
-		  SR1 WHEN iSEL(5 downto 4) = "01" ELSE
-		  sR2 WHEN iSEL(5 downto 4) = "10" ELSE
-		  sR3;
+		   SR1 WHEN iSEL(5 downto 4) = "01" ELSE
+		   sR2 WHEN iSEL(5 downto 4) = "10" ELSE
+		   sR3;
 		  
 	-- SABIRAČ
 	sADD <= ('0' & sA) + ('0' & sB);
@@ -97,7 +97,7 @@ begin
 	-- sREG_OUT, SINHRONI RESET
 	process(iCLK) begin
 		if(iCLK'event AND iCLK = '1') then
-			if(inRESET = '1') then
+			if(inRESET = '0') then
 				sREG_OUT <= "00000";
 			else
 				sREG_OUT <= sADD;

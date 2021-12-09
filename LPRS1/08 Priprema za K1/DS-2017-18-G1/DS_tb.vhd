@@ -47,9 +47,9 @@ begin
 		iSEL <= "000000";
 		iD	  <= "0000";
 		iWE  <= '0';
+		inRESET <= '0'; -- RESET JE AKTIVAN NA NISKOM NAPONSKOM NIVOU TJ. LOGIČKA 0
+		wait for 5 * iCLK_period;
 		inRESET <= '1';
-		wait for 5.5 * iCLK_period;
-		inRESET <= '0';
 		
 		-- I REG0 <= 0x4
 		iWE  <= '1';
