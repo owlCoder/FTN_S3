@@ -56,7 +56,7 @@ begin
 		  iEN <= '0';
         -- pritisnemo reset neko vreme, pa pustimo
         inRST <= '0';
-        wait for 5.5 * i_clk_period;
+        wait for 5 * i_clk_period;
         inRST <= '1';
 
         -- postavimo dozvolu na 1
