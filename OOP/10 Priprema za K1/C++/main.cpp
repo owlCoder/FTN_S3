@@ -8,19 +8,6 @@ int NovogodisnjiPaketic::napravljeniNovogodisnjiPaketici = 0;
 
 int main(void)
 {
-    // Dete d, d2("Milica", DEVOJCICA, 20, true), d1(d2);
-    // cout << d1.getNadimak() << ", Uzrast: " << d1.getUzrast() << " godina" << endl;
-    // d.setNadimak("Milica");
-    // cout << d.getNadimak() << endl;
-    // cout << d2;
-    // Paketic p; nije moguce zbog abstraktnih metoda
-
-    // NovogodisnjiPaketic n1, n2("Nije za tebe", d2, 10);
-    // n1.ispisi();
-    // n2.ispisi();
-    // n2.isporuci();
-    // n2.ispisi();
-
     Dete d1("Misa", DECAK, 6, true), d2("Jeca", DEVOJCICA, 7, true), d3("Laza", DECAK, 10, true), d4("Mica", DEVOJCICA, 2, true), d5(d4);
 
     NovogodisnjiPaketic np("autic na daljinsko upravljanje", d1, 5);
