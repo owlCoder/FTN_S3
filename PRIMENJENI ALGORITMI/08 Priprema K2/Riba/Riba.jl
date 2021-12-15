@@ -24,16 +24,16 @@ display(describe(data))
 plot = scatter(data.Vrsta, data.Tezina, title="TEZINA - VRSTA", xlabel="VRSTA", ylabel="TEZINA")
 savefig(plot, "vrstaTezina.html")
 
-plot = scatter(data.DuzinaVertikalna, data.Tezina, title="DUZINA VERTIKALNA - VRSTA", xlabel="DUZINA VERTIKALNA", ylabel="TEZINA")
+plot = scatter(data.DuzinaVertikalna, data.Tezina, title="DUZINA VERTIKALNA - TEZINA", xlabel="DUZINA VERTIKALNA", ylabel="TEZINA")
 savefig(plot, "duzinaVertikalnaTezina.html")
 
-plot = scatter(data.DuzinaDijagonalna, data.Tezina, title="DUZINA DIJAGONALA - VRSTA", xlabel="DUZINA DIJAGONALA", ylabel="TEZINA")
+plot = scatter(data.DuzinaDijagonalna, data.Tezina, title="DUZINA DIJAGONALA - TEZINA", xlabel="DUZINA DIJAGONALA", ylabel="TEZINA")
 savefig(plot, "duzinaDijagolanaTezina.html")
 
-plot = scatter(data.Duzina, data.Tezina, title="DUZINA - VRSTA", xlabel="DUZINA", ylabel="TEZINA")
+plot = scatter(data.Duzina, data.Tezina, title="DUZINA - TEZINA", xlabel="DUZINA", ylabel="TEZINA")
 savefig(plot, "duzinaTezina.html")
 
-plot = scatter(data.Sirina, data.Tezina, title="SIRINA - VRSTA", xlabel="SIRINA", ylabel="TEZINA")
+plot = scatter(data.Sirina, data.Tezina, title="SIRINA - TEZINA", xlabel="SIRINA", ylabel="TEZINA")
 savefig(plot, "duzinaVrstaTezina.html")
 
 cpvDuzinaDijagonalnaVertikalna = cov(data.DuzinaDijagonalna, data.DuzinaVertikalna)
