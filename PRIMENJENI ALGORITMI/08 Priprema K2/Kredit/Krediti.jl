@@ -79,5 +79,5 @@ elseif aucTest > 0.7
 elseif aucTest > 0.5
     println("RELATIVNO DOBAR")
 else
-    println("JAKO DOBAR")
+    println("NIJE DOBAR")
 end
