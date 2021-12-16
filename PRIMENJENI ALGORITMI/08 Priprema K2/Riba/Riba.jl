@@ -56,7 +56,7 @@ predictTest = predict(regressionModel, dfTest)
 predictTrain = predict(regressionModel, dfTrain)
 
 errorsTest = dfTest.Tezina - predictTest
-errorsTrain = predict(regressionModel, dfTrain)
+errorsTrain = dfTrain.Tezina - predictTrain
 
 rmseTest = sqrt(mean(errorsTest .* errorsTest))
 rmseTrain = sqrt(mean(errorsTrain .* errorsTrain))
