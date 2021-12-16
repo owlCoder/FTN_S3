@@ -47,7 +47,7 @@ data[ismissing.(data[!, :Stanje]), :Stanje] .= mode(skipmissing(data[!, :Stanje]
 # TAKOĐE, SLIČNO I ZA OŠTEĆENJE
 data[ismissing.(data[!, :Ostecenje]), :Ostecenje] .= mode(skipmissing(data[!, :Ostecenje]))
 
-# ZA NUMERIČKE KOLONE KOJE INAJU MALO VREDNOSTI PODATAKA KOJIH FALI
+# ZA NUMERIČKE KOLONE KOJE IMAJU MALO VREDNOSTI PODATAKA KOJIH FALI
 # MOŽEMO IH POPUNITI PROSEKOM OSTALIH VREDNSOTI
 data[ismissing.(data[!, :Kilometraza]), :Kilometraza] .= trunc(Int64, mean(skipmissing(data[!, :Kilometraza])))
 
