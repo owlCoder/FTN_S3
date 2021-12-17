@@ -65,7 +65,7 @@ accuracyTest = (TPTest + TNTest) / (TPTest + TNTest + FPTest + FNTest)
 sensitivityTest = TPTest / (TPTest + FNTest)
 
 # SPECIFICITY (SPECIFIČNOST, TN RATES) = TN / (TN + FP) = TN / N
-specificityTest = TNTest / (TNTest + FNTest)
+specificityTest = TNTest / (TNTest + FPTest)
 
 println("\n\nTP = $TPTest, FP = $FPTest, TN = $TNTest, FN = $FNTest")
 println("ACCURACY ZA TEST SKUP JE: $accuracyTest")
