@@ -100,7 +100,7 @@ predictedTest = predict(regressionModel, dataTest)
 predictedTrain = predict(regressionModel, dataTrain)
 
 errorsTest = dataTest.Cena - predictedTest
-errorsTrain = predict(regressionModel, dataTrain)
+errorsTrain = dataTrain.Cena - predictedTrain
 
 rmseTest = sqrt(mean(errorsTest .* errorsTest))
 rmseTrain = sqrt(mean(errorsTrain .* errorsTrain))
