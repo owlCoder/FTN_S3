@@ -53,7 +53,7 @@ main:
     inc R0, R0  /* mem[3]      */
 
     /* Indeks 23 je kraj niza a, indeks 3 je početak niza a */
-    mov R2, R0  /* R2 = 23     */
+    mov R2, R0  /* R2 = 20     */
 
     inc R5, R5  /* bitmask 0x1 */
     inc R1, R1  /* 21          */
