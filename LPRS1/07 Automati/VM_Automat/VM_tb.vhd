@@ -79,120 +79,162 @@ architecture Test of VM_tb is
    stim_proc : process
    begin		
 		sRST <= '1';
-		wait for iCLK_period;
+		wait for 5.25 * iCLK_period;
 		sRST <= '0';
 		
-		-- pranje hladnom vodom
 		s_run <= '1';
 		s_water <= '1';
 		s_detergent <= '1';
 		s_door_closed <= '1';
-		wait for 10 * iCLK_period;
+		wait for iCLK_period;
 		
-		-- hladna voda
+		-- prelazi u stanje S_WATER IN
+		s_run <= '0';
+		s_water <= '0';
+		s_detergent <= '0';
+		s_door_closed <= '0';
+		wait for 9 * iCLK_period;
+		
 		s_wl_max <= '1';
 		s_hw <= "00";
-		wait for 10 * iCLK_period;
+		wait for iCLK_period;
+		
+		s_wl_max <= '0';
+		s_hw <= "00";
+		wait for 9 * iCLK_period;
 		
 		s_temp_ok <= '1';
-		wait for 50 * iCLK_period; -- brojac w da odbroji 50
+		wait for iCLK_period;
+		s_temp_ok <= '0';
 		
-		wait for 10 * iCLK_period; -- 10 taktova u stanju water out
+		wait for 60 * iCLK_period; --- s_washing i water out
+		s_wl_min <= '1'; -- za centrifuga
+		wait for 21 * iCLK_period; -- centrifuga		
+		s_wl_min <= '0';
 		
-		s_wl_min <= '1';
-		wait for 20 * iCLK_period; -- 20 taktova centrifuge
-		
-		s_door_open <= '0';
-		wait for 5 * iCLK_period;
+		wait for iCLK_period;
 		s_door_open <= '1';
 		
-		-- reset
+		-- reset sistema
+		sRST <= '1';
+		wait for 5.25 * iCLK_period;
+		sRST <= '0';
+		
 		s_run <= '0';
 		s_water <= '0';
 		s_detergent <= '0';
 		s_door_closed <= '0';
 		s_door_open <= '0';
-		s_hw <= "00";
 		s_wl_max <= '0';
+		s_wl_min <= '0';
+		s_hw <= "00";
 		s_temp_ok <= '0';
-		---------------------------------------------------
 		
-		-- topla voda
+		
+		-- 2. pranje warm w
 		sRST <= '1';
-		wait for 5 * iCLK_period;
+		wait for 5.25 * iCLK_period;
 		sRST <= '0';
 		
-		-- pranje toplom vodom
 		s_run <= '1';
 		s_water <= '1';
 		s_detergent <= '1';
 		s_door_closed <= '1';
-		wait for 10 * iCLK_period;
+		wait for iCLK_period;
 		
-		-- topla voda
+		-- prelazi u stanje S_WATER IN
+		s_run <= '0';
+		s_water <= '0';
+		s_detergent <= '0';
+		s_door_closed <= '0';
+		wait for 9 * iCLK_period;
+		
 		s_wl_max <= '1';
 		s_hw <= "01";
-		wait for 10 * iCLK_period;
+		wait for iCLK_period;
+		
+		s_wl_max <= '0';
+		s_hw <= "00";
+		wait for 9 * iCLK_period;
 		
 		s_temp_ok <= '1';
-		wait for 50 * iCLK_period; -- brojac w da odbroji 50
+		wait for iCLK_period;
+		s_temp_ok <= '0';
 		
-		wait for 10 * iCLK_period; -- 10 taktova u stanju water out
+		wait for 60 * iCLK_period; --- s_washing i water out
+		s_wl_min <= '1'; -- za centrifuga
+		wait for 21 * iCLK_period; -- centrifuga		
+		s_wl_min <= '0';
 		
-		s_wl_min <= '1';
-		wait for 20 * iCLK_period; -- 20 taktova centrifuge
-		
-		s_door_open <= '0';
-		wait for 5 * iCLK_period;
+		wait for iCLK_period;
 		s_door_open <= '1';
 		
-		-- reset
+		-- reset sistema
+		sRST <= '1';
+		wait for 5.25 * iCLK_period;
+		sRST <= '0';
+		
 		s_run <= '0';
 		s_water <= '0';
 		s_detergent <= '0';
 		s_door_closed <= '0';
 		s_door_open <= '0';
-		s_hw <= "00";
 		s_wl_max <= '0';
+		s_wl_min <= '0';
+		s_hw <= "00";
 		s_temp_ok <= '0';
-		---------------------------------------------------
 		
+		-- vruce pranje
 		sRST <= '1';
-		wait for 5 * iCLK_period;
+		wait for 5.25 * iCLK_period;
 		sRST <= '0';
 		
-		-- pranje vrucom vodom
 		s_run <= '1';
 		s_water <= '1';
 		s_detergent <= '1';
 		s_door_closed <= '1';
-		wait for 10 * iCLK_period;
+		wait for iCLK_period;
 		
-		-- vruca voda
+		-- prelazi u stanje S_WATER IN
+		s_run <= '0';
+		s_water <= '0';
+		s_detergent <= '0';
+		s_door_closed <= '0';
+		wait for 9 * iCLK_period;
+		
 		s_wl_max <= '1';
 		s_hw <= "10";
-		wait for 10 * iCLK_period;
+		wait for iCLK_period;
+		
+		s_wl_max <= '0';
+		s_hw <= "00";
+		wait for 9 * iCLK_period;
 		
 		s_temp_ok <= '1';
-		wait for 50 * iCLK_period; -- brojac w da odbroji 50
+		wait for iCLK_period;
+		s_temp_ok <= '0';
 		
-		wait for 10 * iCLK_period; -- 10 taktova u stanju water out
+		wait for 60 * iCLK_period; --- s_washing i water out
+		s_wl_min <= '1'; -- za centrifuga
+		wait for 21 * iCLK_period; -- centrifuga		
+		s_wl_min <= '0';
 		
-		s_wl_min <= '1';
-		wait for 20 * iCLK_period; -- 20 taktova centrifuge
-		
-		s_door_open <= '0';
-		wait for 5 * iCLK_period;
+		wait for iCLK_period;
 		s_door_open <= '1';
 		
-		-- reset
+		-- reset sistema
+		sRST <= '1';
+		wait for 5.25 * iCLK_period;
+		sRST <= '0';
+		
 		s_run <= '0';
 		s_water <= '0';
 		s_detergent <= '0';
 		s_door_closed <= '0';
 		s_door_open <= '0';
-		s_hw <= "00";
 		s_wl_max <= '0';
+		s_wl_min <= '0';
+		s_hw <= "00";
 		s_temp_ok <= '0';
 		
 		sRST <= '1';
